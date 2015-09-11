@@ -1,0 +1,19 @@
+<h2><%= board.escape('title') %></h1>
+
+<h2>Lists</h2>
+<% board.lists().forEach(function (list) { %>
+  <li>
+
+    <%= list.escape('title') %>
+    <ul>
+      <% list.cards().each(function (card) { %>
+        <div>
+          <%= card.escape('title') %><br>
+          <%= card.escape('description') %><br><br>
+        </div>
+      <% }) %>
+    </ul>
+  </li>
+<% }) %>
+
+<a href='#/lists/new'>
