@@ -34,6 +34,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   },
 
   deleteBoard: function (e) {
-    
+    this.model.destroy();
+    Backbone.history.navigate("", {trigger: true});
   }
 })
