@@ -1,13 +1,13 @@
 <h2><%= board.escape('title') %></h1>
 
 <h2>Lists</h2>
-
-<ul class='lists group'>
+<a href='#/boards/<%= board.id %>/lists/new'>New List</a>
+<ul id="sortable" class='lists group'>
   <% board.lists().forEach(function (list) { %>
     <li class='list'>
 
       <%= list.escape('title') %>
-      <ul class='cards'>
+      <ul id="sortable" class='cards'>
         <% list.cards().each(function (card) { %>
           <li class='card'>
             <%= card.escape('title') %><br>
@@ -25,4 +25,12 @@
   <% }) %>
 </ul>
 
-<a href='#/boards/<%= board.id %>/lists/new'>New List</a>
+
+<button class='delete-board'>Delete Board</button>
+<script>
+  $(function() {
+    debugger
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+</script>
