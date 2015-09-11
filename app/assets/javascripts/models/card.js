@@ -2,6 +2,6 @@ TrelloClone.Models.Card = Backbone.Model.extend({
   urlRoot: "api/cards",
 
   toJSON: function () {
-    return {list: _.clone(this.attributes)};
+    return {card: _.clone(this.attributes)};
   }
 })

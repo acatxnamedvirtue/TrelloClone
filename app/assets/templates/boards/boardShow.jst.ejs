@@ -1,19 +1,28 @@
 <h2><%= board.escape('title') %></h1>
 
 <h2>Lists</h2>
-<% board.lists().forEach(function (list) { %>
-  <li>
 
-    <%= list.escape('title') %>
-    <ul>
-      <% list.cards().each(function (card) { %>
-        <div>
-          <%= card.escape('title') %><br>
-          <%= card.escape('description') %><br><br>
-        </div>
-      <% }) %>
-    </ul>
-  </li>
-<% }) %>
+<ul class='lists group'>
+  <% board.lists().forEach(function (list) { %>
+    <li class='list'>
 
-<a href='#/lists/new'>
+      <%= list.escape('title') %>
+      <ul class='cards'>
+        <% list.cards().each(function (card) { %>
+          <li class='card'>
+            <%= card.escape('title') %><br>
+            <%= card.escape('description') %>
+            <button
+              data-card-id="<%= card.id %>"
+              data-list-id="<%= list.id %>"
+              class='delete-card'>Delete Card</button>
+          </li><br>
+        <% }) %>
+      </ul>
+      <a href="#/boards/<%= board.id %>/lists/<%= list.id %>/cards/new">New Card</a>
+      <button data-list-id="<%= list.id %>" class='delete-list'>Delete List</button>
+    </li>
+  <% }) %>
+</ul>
+
+<a href='#/boards/<%= board.id %>/lists/new'>New List</a>

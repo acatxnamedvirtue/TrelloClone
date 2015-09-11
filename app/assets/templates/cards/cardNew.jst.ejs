@@ -1,0 +1,13 @@
+<h1>Create New Card</h1>
+
+<ul class='errors'></ul>
+
+<label for="card_title">Title:</label>
+<input id="card_title" type="text" name="card[title]" value='<%= card.escape("title") %>'><br>
+
+<label for="card_description">Description:</label>
+<textarea id="card_description" name="card[description]">
+  <%= card.escape("description") %>
+</textarea><br>
+
+<input type="submit">

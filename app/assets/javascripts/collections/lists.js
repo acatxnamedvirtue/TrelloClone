@@ -1,5 +1,6 @@
 TrelloClone.Collections.Lists = Backbone.Collection.extend({
   model: TrelloClone.Models.List,
+  url: "api/lists/",
 
   cards: function() {
     this._cards = this._cards || new TrelloClone.Collections.Cards();

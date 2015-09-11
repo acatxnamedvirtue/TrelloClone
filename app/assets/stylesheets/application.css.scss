@@ -16,3 +16,39 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+h1, h2 {
+  margin: 50 auto;
+  background: blue;
+  text-align: center;
+  width: 200px;
+  color: white;
+  border: 2px solid red;
+}
+
+.list {
+  margin: 50px;
+  border: 2px solid red;
+  background: blue;
+  color: white;
+  display: block;
+  float: left;
+}
+
+.list ul {
+  padding: 15px;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.delete-card {
+  display: none;
+}
+
+.card:hover .delete-card {
+  display: block;
+}
