@@ -13,42 +13,186 @@
  *= require_tree .
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+// @import "font-awesome";
+// Reset
+html, body, nav, div, button, form, input, h1, h2, ul, li, span, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
 
-h1, h2 {
-  margin: 50 auto;
-  background: blue;
-  text-align: center;
-  width: 200px;
-  color: white;
-  border: 2px solid red;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+
+  background: transparent;
 }
 
-.list {
-  margin: 50px;
-  border: 2px solid red;
-  background: blue;
-  color: white;
-  display: block;
-  float: left;
-}
-
-.list ul {
-  padding: 15px;
+ul {
+  list-style: none;
 }
 
 .group:after {
   content: "";
-  display: block;
   clear: both;
+  display: block;
 }
 
-.delete-card {
+// Navbar
+.navbar {
+  background: #026AA7;
+  height: 40px;
+}
+
+.navbar-left-container {
+  float: left;
+  background: #398ABA;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 3px 5px;
+  overflow: hidden;
+  color: white;
+}
+
+.navbar-brand-container {
+  float: left;
+  margin: auto;
+  padding: 2px;
+  color: #80B4D3;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-family: sans-serif;
+}
+
+.navbar-brand-link:hover {
+  color: #CCE1ED;
+}
+
+.navbar-right-container {
+  float: right
+}
+
+.navbar-right-container input:hover {
+  background: #64A4C9;
+}
+
+.navbar-right-container input {
+  background: #398ABA;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 3px 5px;
+  overflow: hidden;
+  color: white;
+}
+
+//Body
+body {
+  background: #80B4D3;
+  height: 1000px;
+}
+
+//Index
+
+.backdrop h1 {
+  color: #4D4D4D;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 39px 0 10px 54px;
+}
+
+.backdrop .boards li {
+  margin: 0 25px;
+  display: block;
+  float: left;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  background: #026AA7;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.backdrop .boards li a {
+  display: list-item;
+  list-style-type: none;
+}
+
+.backdrop .delete-board {
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #398ABA;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   display: none;
 }
 
-.card:hover .delete-card {
+.backdrop .boards li:hover .delete-board {
   display: block;
 }
+
+.backdrop .delete-board:hover {
+  background: #64A4C9;
+}
+
+.backdrop .new-board {
+  position: absolute;
+  margin: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #398ABA;
+}
+
+.backdrop .new-board:hover {
+  background: #64A4C9;
+}
+
+.backdrop .delete-list,.delete-card {
+  display: none;
+}
+
+.backdrop .list:hover .delete-list,.backdrop .card:hover .delete-card {
+  display: block;
+}
+
+.backdrop .list {
+  float: left;
+  display: block;
+  background: #026AA7;
+  border: 1px solid black;
+}
+
+//New Board
+
+
+
+//Board Show
+
+.backdrop h2 {
+  text-align: center;
+  width: 75px;
+  color: white;
+  margin: 20px 50px;
+  border: 1px solid black;
+  background: #026AA7;
+}
+
+.backdrop .list {
+  float: left;
+  margin: 50px;
+  color: white;
+  text-align: center;
+}
+
+
+//New List

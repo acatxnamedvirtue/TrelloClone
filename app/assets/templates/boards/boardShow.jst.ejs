@@ -1,15 +1,15 @@
 <h2><%= board.escape('title') %></h1>
 
 <h2>Lists</h2>
-<a href='#/boards/<%= board.id %>/lists/new'>New List</a>
-<ul id="sortable" class='lists group'>
-  <% board.lists().forEach(function (list) { %>
-    <li class='list'>
 
+<ul class='sortable lists group'>
+
+  <% board.lists().forEach(function (list) { %>
+    <li class='list' data-id='<%= list.escape('id')%>' data-ord='<%= list.escape('ord') %>'>
       <%= list.escape('title') %>
-      <ul id="sortable" class='cards'>
+      <ul class='sortable cards' data-list-id='<%= list.escape('id') %>'>
         <% list.cards().each(function (card) { %>
-          <li class='card'>
+          <li class='card' data-card-id='<%= card.escape('id')%>' data-ord='<%= card.escape('ord') %>'>
             <%= card.escape('title') %><br>
             <%= card.escape('description') %>
             <button
@@ -23,14 +23,9 @@
       <button data-list-id="<%= list.id %>" class='delete-list'>Delete List</button>
     </li>
   <% }) %>
+    <script>$('.sortable').sortable()</script>
 </ul>
+<a href='#/boards/<%= board.id %>/lists/new'>New List</a>
 
 
-<button class='delete-board'>Delete Board</button>
-<script>
-  $(function() {
-    debugger
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
-  });
-</script>
+<button class='delete'>Delete Board</button>
